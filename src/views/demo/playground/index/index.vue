@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import menu from '@/menu/modules/demo-playground'
+import menu from '@/menu/modules/d2admin/demo-playground'
 export default {
   data () {
     return {

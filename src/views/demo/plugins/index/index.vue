@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import menu from '@/menu/modules/demo-plugins'
+import menu from '@/menu/modules/d2admin/demo-plugins'
 export default {
   data () {
     return {

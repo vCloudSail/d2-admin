@@ -6,7 +6,7 @@ const _import = require('@/libs/util.import.' + process.env.NODE_ENV)
 const meta = { auth: true }
 
 export default {
-  path: '/demo/playground',
+  path: '/d2admin/demo/playground',
   name: 'demo-playground',
   meta,
   redirect: { name: 'demo-playground-index' },

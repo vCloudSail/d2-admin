@@ -2,10 +2,15 @@
   <d2-container>
     <template slot="header">SVG图标组件</template>
     <el-row>
-      <el-col class="icon-card" :span="4" v-for="(icon, index) in $IconSvg" :key="index">
-        <d2-icon-svg class="icon" :name="icon"/>
+      <el-col
+        class="icon-card"
+        :span="4"
+        v-for="(icon, index) in $IconSvg"
+        :key="index"
+      >
+        <any-icon :src="icon" />
         <div class="icon-title">
-          <span>{{icon}}</span>
+          <span>{{ icon }}</span>
         </div>
       </el-col>
     </el-row>
@@ -31,7 +36,7 @@
 .icon {
   height: 80px;
   width: 80px;
-  transition: all .3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .icon-title {

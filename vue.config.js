@@ -239,7 +239,7 @@ module.exports = {
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
       .options({
-        symbolId: 'd2-[name]'
+        symbolId: 'svg-icon-[name]'
       })
       .end()
     // image exclude
@@ -260,7 +260,7 @@ module.exports = {
     i18n: {
       locale: 'zh-chs',
       fallbackLocale: 'en',
-      localeDir: 'locales',
+      localeDir: 'i18n/locales',
       enableInSFC: true
     }
   }

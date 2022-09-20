@@ -1,6 +1,6 @@
-import playground from './modules/playground'
-import plugins from './modules/plugins'
-import components from './modules/components'
+import playground from './modules/d2admin/playground'
+import plugins from './modules/d2admin/plugins'
+import components from './modules/d2admin/components'
 
 import layoutHeaderAside from '@/layout/header-aside'
 
@@ -52,6 +52,10 @@ const frameIn = [
       }
     ]
   },
+  // {
+  //   path: '/d2admin',
+  //   children: [playground, plugins, components]
+  // }
   playground,
   plugins,
   components
@@ -84,8 +88,4 @@ const errorPage = [
 export const frameInRoutes = frameIn
 
 // 重新组织后导出
-export default [
-  ...frameIn,
-  ...frameOut,
-  ...errorPage
-]
+export default [...frameIn, ...frameOut, ...errorPage]

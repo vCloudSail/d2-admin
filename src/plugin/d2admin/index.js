@@ -8,7 +8,7 @@ import '@/components'
 // svg 图标
 import '@/assets/svg-icons'
 // 国际化
-import i18n from '@/i18n.js'
+import i18n from '@/i18n'
 
 // 功能插件
 import pluginError from '@/plugin/error'

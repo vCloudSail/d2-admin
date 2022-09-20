@@ -6,7 +6,7 @@ const _import = require('@/libs/util.import.' + process.env.NODE_ENV)
 const meta = { auth: true }
 
 export default {
-  path: '/demo/plugins',
+  path: '/d2admin/demo/plugins',
   name: 'demo-plugins',
   meta,
   redirect: { name: 'demo-plugins-index' },

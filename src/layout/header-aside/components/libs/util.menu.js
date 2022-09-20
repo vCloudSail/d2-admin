@@ -3,17 +3,27 @@
  * @param {Function} h createElement
  * @param {Object} menu 菜单项
  */
-export function elMenuItem (h, menu) {
+export function elMenuItem(h, menu) {
   let icon = null
-  if (menu.icon) icon = <i class={ `fa fa-${menu.icon}` }/>
-  else if (menu.iconSvg) icon = <d2-icon-svg name={ menu.iconSvg }/>
-  else icon = <i class="fa fa-file-o"/>
-  return <el-menu-item
-    key={ menu.path }
-    index={ menu.path }>
-    { icon }
-    <span slot="title">{ menu.title || '未命名菜单' }</span>
-  </el-menu-item>
+  // if (menu.icon) icon = <i class={`fa fa-${menu.icon}`} />
+  // else if (menu.iconSvg) icon = <d2-icon-svg name={menu.iconSvg} />
+  // else icon = <i class="fa fa-file-o" />
+
+  icon = (
+    <any-icon
+      class="fa"
+      src={menu.icon || 'fa-folder-o'}
+      font-icon-prefix="fa"></any-icon>
+  )
+
+  return (
+    <el-menu-item
+      key={menu.path}
+      index={menu.path}>
+      {icon}
+      <span slot="title">{menu.title || '未命名菜单'}</span>
+    </el-menu-item>
+  )
 }
 
 /**
@@ -21,18 +31,29 @@ export function elMenuItem (h, menu) {
  * @param {Function} h createElement
  * @param {Object} menu 菜单项
  */
-export function elSubmenu (h, menu) {
+export function elSubmenu(h, menu) {
   let icon = null
-  if (menu.icon) icon = <i slot="title" class={ `fa fa-${menu.icon}` }/>
-  else if (menu.iconSvg) icon = <d2-icon-svg slot="title" name={ menu.iconSvg }/>
-  else icon = <i slot="title" class="fa fa-folder-o"/>
-  return <el-submenu
-    key={ menu.path }
-    index={ menu.path }>
-    { icon }
-    <span slot="title">{ menu.title || '未命名菜单' }</span>
-    { menu.children.map(child => createMenu.call(this, h, child)) }
-  </el-submenu>
+  // if (menu.icon) icon = <i slot="title" class={ `fa fa-${menu.icon}` }/>
+  // else if (menu.iconSvg) icon = <d2-icon-svg slot="title" name={ menu.iconSvg }/>
+  // else icon = <i slot="title" class="fa fa-folder-o"/>
+
+  icon = (
+    <any-icon
+      class="fa"
+      slot="title"
+      src={menu.icon || 'fa-folder-o'}
+      font-icon-prefix="fa"></any-icon>
+  )
+
+  return (
+    <el-submenu
+      key={menu.path}
+      index={menu.path}>
+      {icon}
+      <span slot="title">{menu.title || '未命名菜单'}</span>
+      {menu.children.map((child) => createMenu.call(this, h, child))}
+    </el-submenu>
+  )
 }
 
 /**
@@ -40,7 +61,7 @@ export function elSubmenu (h, menu) {
  * @param {Function} h createElement
  * @param {Object} menu 菜单项
  */
-export function createMenu (h, menu) {
+export function createMenu(h, menu) {
   if (menu.children === undefined) return elMenuItem.call(this, h, menu)
   return elSubmenu.call(this, h, menu)
 }
